@@ -2,7 +2,7 @@ import TronWeb from 'tronweb';
 import Config from '../config';
 import { getBaseInfo } from './backend';
 
-import { BigNumber, openTransModal, setTransactionsData, randomSleep, myLocal } from './helper';
+import { BigNumber, openTransModal, setTransactionsData, randomSleep } from './helper';
 
 const chain = Config.chain;
 
@@ -36,17 +36,6 @@ export const triggerSmartContract = async (address, functionSelector, options = 
     }
     return transaction;
   } catch (error) {
-    throw new Error(error);
-  }
-};
-
-export const sign = async transaction => {
-  try {
-    const tronweb = window.tronWeb;
-    const signedTransaction = await tronweb.trx.sign(transaction.transaction);
-    return signedTransaction;
-  } catch (error) {
-    console.log(error, 'signerr');
     throw new Error(error);
   }
 };
