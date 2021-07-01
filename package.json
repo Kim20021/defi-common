@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "tronweb": "^3.2.7",
     "webpack": "^5.40.0"
   },
   "devDependencies": {
